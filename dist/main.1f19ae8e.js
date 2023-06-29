@@ -147,14 +147,19 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 //     console.log('rest...')
 // }
 
+// 반복문 (for statement)
+// for (시작조건; 종료조건; 변화조건) {}
+
 var ulEl = document.querySelector('ul');
 // console.log(ulEl)
 var _loop = function _loop() {
   var li = document.createElement('li');
   li.textContent = "list-".concat(i + 1);
-  li.addEventListener('click', function () {
-    console.log(li.textContent);
-  });
+  if ((i + 1) % 2 === 0) {
+    li.addEventListener('click', function () {
+      console.log(li.textContent);
+    });
+  }
   ulEl.appendChild(li);
 };
 for (var i = 0; i < 10; i += 1) {
@@ -185,7 +190,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61246" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57330" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
