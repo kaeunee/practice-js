@@ -117,49 +117,50 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"getRandom.js":[function(require,module,exports) {
-"use strict";
+})({"main.js":[function(require,module,exports) {
+// import random from './getRandom'
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = random;
-function random() {
-  return Math.floor(Math.random() * 10);
+// const a = random()
+
+// //switch
+// switch (a) {
+//     case 0:
+//     console.log('a is 0')
+//         break
+//     case 2:
+//     console.log('a is 2')
+//         break
+//     case 4:
+//     console.log('a is 4')
+//         break
+//     default: //나머지인 경우
+// }
+
+// //if
+// if (a === 0) {
+// console.log('a is 0')
+// } else if (a === 2) { //else if는 중간조건
+//     console.log('a is 2')
+// } else if (a === 4) {
+//     console.log('a is 4')
+// } else {
+//     console.log('rest...')
+// }
+
+var ulEl = document.querySelector('ul');
+// console.log(ulEl)
+var _loop = function _loop() {
+  var li = document.createElement('li');
+  li.textContent = "list-".concat(i + 1);
+  li.addEventListener('click', function () {
+    console.log(li.textContent);
+  });
+  ulEl.appendChild(li);
+};
+for (var i = 0; i < 10; i += 1) {
+  _loop();
 }
-},{}],"main.js":[function(require,module,exports) {
-"use strict";
-
-var _getRandom = _interopRequireDefault(require("./getRandom"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-var a = (0, _getRandom.default)();
-
-//switch
-switch (a) {
-  case 0:
-    console.log('a is 0');
-    break;
-  case 2:
-    console.log('a is 2');
-    break;
-  case 4:
-    console.log('a is 4');
-    break;
-  default: //나머지인 경우
-}
-
-//if
-if (a === 0) {
-  console.log('a is 0');
-} else if (a === 2) {
-  //else if는 중간조건
-  console.log('a is 2');
-} else if (a === 4) {
-  console.log('a is 4');
-} else {
-  console.log('rest...');
-}
-},{"./getRandom":"getRandom.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -184,7 +185,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59142" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61246" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
