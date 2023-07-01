@@ -172,17 +172,58 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
 // 함수 복습
 
+/*
 function sum(x, y) {
-  return x + y;
+    return x + y
 }
-var a = sum(1, 3);
-var b = sum(4, 12);
-console.log(a);
-console.log(b);
-console.log(a + b);
+
+const a = sum(1, 3)
+const b = sum (4, 12)
+
+console.log(a)
+console.log(b)
+console.log(a + b)
+*/
 
 // 함수의 결과가 반복적으로 사용될때에는 변수에 담아서 사용하는 것이 좋고
 // 단일로만 사용될때에는 그대로 함수의 결과가 사용되는 곳에서 함수를 호출하는 것도 효과적인 사용 방법이다.
+
+/**
+ * 함수 선언방식, 함수 표현
+ * return 키워드 반환(내보내기)과 동시에 종료를 의미하기도 함
+ * 함수를 사용할때 매개변수 없이 arguments라는 특정 개체 사용할 수 있음
+ * 함수 안에서 언제든지 사용할 수 있음
+ * 함수를 실행할때 사용하는 인수가 너무 많아서 매개변수를 일일히 지정하기 힘들때
+ * arguments 객체를 활용할 수 있음 단, 직관적이지 않아서 매개변수를 지정 권장
+*/
+
+// 화살표 함수
+// () => {} vs function () {}
+
+// const double = function (x) {
+//     return x * 2
+// }
+// console.log.apply('double: ', double(7))
+
+// 동일 로직을 통한 화살표 함수 function키워드가 없는 대신 화살표 입력
+// 화살표 함수와 일반 함수의 차이는 화살표 함수는 기본적 로직 축약형
+// 객체 데이터를 만들때에는 중괄호 사용하지만, *화살표 함수는 소괄호로 감싸준 후 중괄호 사용해야함)
+
+/*
+const doubleArrow = (x) => {
+    return x * 2
+}
+console.log.apply('doubleArrow', doubleArrow(7))
+*/
+
+// 즉시실행함수
+// IIFE, Immediately-Invoked Function Expression
+
+var a = 7;
+function double() {
+  console.log(a * 2);
+}
+double();
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -208,7 +249,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55437" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59247" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

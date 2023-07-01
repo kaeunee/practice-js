@@ -81,16 +81,42 @@ console.log(a + b)
 // 화살표 함수
 // () => {} vs function () {}
 
-const double = function (x) {
-    return x * 2
-}
-console.log.apply('double: ', double(7))
+// const double = function (x) {
+//     return x * 2
+// }
+// console.log.apply('double: ', double(7))
 
 // 동일 로직을 통한 화살표 함수 function키워드가 없는 대신 화살표 입력
 // 화살표 함수와 일반 함수의 차이는 화살표 함수는 기본적 로직 축약형
 // 객체 데이터를 만들때에는 중괄호 사용하지만, *화살표 함수는 소괄호로 감싸준 후 중괄호 사용해야함)
 
+/*
 const doubleArrow = (x) => {
     return x * 2
 }
 console.log.apply('doubleArrow', doubleArrow(7))
+*/
+
+// 즉시실행함수
+// IIFE, Immediately-Invoked Function Expression
+
+const a = 7
+function double() {
+    console.log(a * 2)
+}
+double();
+
+/*
+함수를 하나 만들었는데 한번 실행되고 쓸 일이 없는 전제하에 굳이 함수 이름을 만들어서 호출할 필요가 없음
+이런 경우를 대비해서 즉시실행함수 사용
+*/
+
+(function () {
+    console.log( a * 2 )
+})();
+
+(function () {
+    console.log( a * 2 )
+}());
+
+// 즉시실행함수는 위와같이 (x)(), (x()) 두 가지 사용 문법 존재
