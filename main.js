@@ -53,6 +53,7 @@
 
 // 함수 복습
 
+/*
 function sum(x, y) {
     return x + y
 }
@@ -63,6 +64,7 @@ const b = sum (4, 12)
 console.log(a)
 console.log(b)
 console.log(a + b)
+*/
 
 // 함수의 결과가 반복적으로 사용될때에는 변수에 담아서 사용하는 것이 좋고
 // 단일로만 사용될때에는 그대로 함수의 결과가 사용되는 곳에서 함수를 호출하는 것도 효과적인 사용 방법이다.
@@ -75,3 +77,20 @@ console.log(a + b)
  * 함수를 실행할때 사용하는 인수가 너무 많아서 매개변수를 일일히 지정하기 힘들때
  * arguments 객체를 활용할 수 있음 단, 직관적이지 않아서 매개변수를 지정 권장
 */
+
+// 화살표 함수
+// () => {} vs function () {}
+
+const double = function (x) {
+    return x * 2
+}
+console.log.apply('double: ', double(7))
+
+// 동일 로직을 통한 화살표 함수 function키워드가 없는 대신 화살표 입력
+// 화살표 함수와 일반 함수의 차이는 화살표 함수는 기본적 로직 축약형
+// 객체 데이터를 만들때에는 중괄호 사용하지만, *화살표 함수는 소괄호로 감싸준 후 중괄호 사용해야함)
+
+const doubleArrow = (x) => {
+    return x * 2
+}
+console.log.apply('doubleArrow', doubleArrow(7))
