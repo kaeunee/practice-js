@@ -100,17 +100,20 @@ console.log.apply('doubleArrow', doubleArrow(7))
 // 즉시실행함수
 // IIFE, Immediately-Invoked Function Expression
 
+/*
 const a = 7
 function double() {
     console.log(a * 2)
 }
 double();
+*/
 
 /*
 함수를 하나 만들었는데 한번 실행되고 쓸 일이 없는 전제하에 굳이 함수 이름을 만들어서 호출할 필요가 없음
-이런 경우를 대비해서 즉시실행함수 사용
+이런 경우를 대비해서 즉시실행함수 사용 정의되자마자 즉시 실행
 */
 
+/*
 (function () {
     console.log( a * 2 )
 })();
@@ -118,5 +121,20 @@ double();
 (function () {
     console.log( a * 2 )
 }());
+*/
 
 // 즉시실행함수는 위와같이 (x)(), (x()) 두 가지 사용 문법 존재
+
+// 호이스팅(Hoisting)
+// 함수 선언부가 유효범위 최상단으로 끌어올려지는 현상
+
+const a = 7
+
+double()
+
+function double() {
+    console.log(a * 2)
+} 
+/* 함수 선언은 아래에 작성해도 그 위에서 호출이 가능
+함수이름만 보고도 대략적인 로직을 알 수 있음
+코드를 위에서부터 아래로 읽어져 내려갈때 이름을 통해 대략적인 로직을 추측하기 위해 */
